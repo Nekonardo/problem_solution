@@ -2,6 +2,7 @@ import time
 from task_a_steps_calculation import steps_to_reach_repeating
 from task_c_steps_calculation_optimized import steps_to_reach_repeating_optimized
 
+# N is the maximum range of parameter m
 N = 10000
 
 

@@ -7,6 +7,7 @@ def value_at_n(n, m):
         return m
 
     last_element_in_sequence = value_at_n(n - 1, m)
+
     if last_element_in_sequence % 2 == 0:
         return int(last_element_in_sequence / 2)
     else:
@@ -14,7 +15,7 @@ def value_at_n(n, m):
 
 
 # Steps calculated here referred to steps from n = 1 to first
-# required element
+# required element e.g. when m = 1, step will be 0
 def steps_to_reach_repeating(m):
     if m <= 0 or m % 1 != 0:
         raise Exception("Invalid input m, it must be a positive integer but it is: ", m)
