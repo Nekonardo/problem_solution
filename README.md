@@ -53,7 +53,7 @@ Similar to function in task (a), function steps_to_reach_repeating_optimized(m) 
 
 ```python
     for m in range(1, 10):
-    print("m = ", m, " steps = ", steps_to_reach_repeating_optimized(m))
+        print("m = ", m, " steps = ", steps_to_reach_repeating_optimized(m))
 ```
 
 ### Task (d)
@@ -62,13 +62,13 @@ Mapping m to x-axis with range of [1,10000]  and coresponding minimum steps $n_{
 scatter diagram can be plotted in the following way.
 
 ```python 
-    x_data = np.linspace(1, N, N, dtype=int)
-    y_data = np.asarray([steps_to_reach_repeating_optimized(i) for i in x_data])
-    df = pd.DataFrame({'Value of m': x_data, 'Steps to reach repetition': y_data})
+x_data = np.linspace(1, N, N, dtype=int)
+y_data = np.asarray([steps_to_reach_repeating_optimized(i) for i in x_data])
+df = pd.DataFrame({'Value of m': x_data, 'Steps to reach repetition': y_data})
 
-    fig = px.scatter(df, x='Value of m', y='Steps to reach repetition',
-                     title="Steps to reach 1 the first time in repetition")
-    fig.show()
+fig = px.scatter(df, x='Value of m', y='Steps to reach repetition',
+                title="Steps to reach 1 the first time in repetition")
+fig.show()
 ```
 
 ## Contributing

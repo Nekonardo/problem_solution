@@ -3,9 +3,9 @@ def steps_to_reach_repeating_optimized(m):
     if m <= 0 or m % 1 != 0:
         print("Invalid input m, it must be a positive integer but it is: ", m)
 
-    first_1_index = 0
+    first_1_index = 1
     if m == 1:
-        return 0
+        return first_1_index
     old_value = m  # initial last_element_value is set to m
     while True:
         if old_value % 2 == 0: # if last_element_value is even
