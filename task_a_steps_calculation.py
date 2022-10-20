@@ -1,21 +1,28 @@
-# Definition by the task description, by induction
+# Definition by the task description, by recursion
 
 def value_at_n(n, m):
-    if n == 0:  # recursion initial condition
+    if m <= 0 or m % 1 != 0:
+        raise Exception("Invalid input m, it must be a positive integer but it is: ", m)
+
+    if n == 0:  # recursion terminating condition
         return m
-    c_m_n = value_at_n(n - 1, m)
-    if c_m_n % 2 == 0:
-        return int(c_m_n / 2)
+
+    last_element_in_sequence = value_at_n(n - 1, m)
+    if last_element_in_sequence % 2 == 0:
+        return int(last_element_in_sequence / 2)
     else:
-        return int((c_m_n * 3) + 1)
+        return int((last_element_in_sequence * 3) + 1)
 
 
-# It can be notice that once reach number 1 for the first time
-# the next element must be 2 and start iteration. Thus returning
-# the index is sufficient.
+# It can be noticed that once reach number 1 for the first time
+# the next element must be 2 and start '1,2,4,1,2...' iteration
+# Thus returning the index of first 1 is sufficient
+
+# Steps calculated here referred to steps from n = 1 to first
+# required element
 def steps_to_reach_repeating(m):
     if m <= 0 or m % 1 != 0:
-        print("Invalid input m, it must be a positive integer but it is: ", m)
+        raise Exception("Invalid input m, it must be a positive integer but it is: ", m)
 
     first_1_index = 0
     while True:
@@ -26,6 +33,6 @@ def steps_to_reach_repeating(m):
 
 
 if __name__ == '__main__':
-    for m in range(1, 10):
+    for m in range(0, 10):
         print("m = ", m, " steps = ", steps_to_reach_repeating(m))
 

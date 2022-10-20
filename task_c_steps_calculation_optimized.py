@@ -1,4 +1,4 @@
-# To avoid using too many stack,replace recursive calculation by a loop
+# To avoid using too many stacks,replace recursive calculation by using a loop
 def steps_to_reach_repeating_optimized(m):
     if m <= 0 or m % 1 != 0:
         print("Invalid input m, it must be a positive integer but it is: ", m)
