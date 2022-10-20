@@ -8,16 +8,15 @@ N = 10000
 def original_method(n):
     for x in range(1, n):
         steps_to_reach_repeating(x)
-        # print("original ", x, ": ", steps_to_reach_repeating(x))
 
 
 def optimized_method(n):
     for x in range(1, n):
         steps_to_reach_repeating_optimized(x)
-        # print("optimal ", x, ": ", steps_to_reach_repeating_enhanced_version(x))
 
 
 if __name__ == '__main__':
+    # approximately 20secs in total, for reference
     print("Process starts")
     starting_time = time.time()
     original_method(N)
@@ -27,4 +26,3 @@ if __name__ == '__main__':
     optimized_method(N)
     print("Optimized method took: ", time.time() - starting_time)
     print("Process ends")
-
