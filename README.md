@@ -1,6 +1,6 @@
 # Problem solution
 
-This repsitory is a solution for the sample coding task and following presentation.
+This repository is a solution for the sample coding task and following presentation.
 
 ## Installation
 
@@ -19,9 +19,9 @@ pip install plotly==5.9.0
 
 ## Usage
 
-### Task (a)
+### Task (A)
 
-To get $C_m(n)$ value with given n and m.
+To get $C_m(n)$ value with given n and m, run the following command.
 
 ```python
     value = value_at_n(n, m)
@@ -30,22 +30,20 @@ To get $C_m(n)$ value with given n and m.
 Calculate minimum steps needed for different m value, from m = 1 to m = 10.
 
 ```python
-
-for m in range(1, 10):
-    print("m = ", m, " steps = ", steps_to_reach_repeating(m))
+    for m in range(1, 10):
+        print("m = ", m, " steps = ", steps_to_reach_repeating(m))
 ```
 
-### Task (b)
+### Task (B)
 
-Calculate minimum steps to reach repetition via original method from m = 1 to m = N, where N = 10000.
+Calculate minimum steps to reach repetition via original method from m = 1 to m = N, where N = 10000. 
 
 ```python
-
-N = 10000
-original_method(N)
+    N = 10000
+    original_method(N)
 ```
 
-### Task (c)
+### Task (C)
 
 Similar to function in task (a), function steps_to_reach_repeating_optimized(m) is used to calculate minimum steps to
  repetition, in a optimized way.
@@ -56,19 +54,19 @@ Similar to function in task (a), function steps_to_reach_repeating_optimized(m) 
         print("m = ", m, " steps = ", steps_to_reach_repeating_optimized(m))
 ```
 
-### Task (d)
+### Task (D)
 
 Mapping m to x-axis with range of [1,10000]  and coresponding minimum steps $n_{min} s.t C_m(n) =1$ to y-axis, the
 scatter diagram can be plotted in the following way.
 
 ```python 
-x_data = np.linspace(1, N, N, dtype=int)
-y_data = np.asarray([steps_to_reach_repeating_optimized(i) for i in x_data])
-df = pd.DataFrame({'Value of m': x_data, 'Steps to reach repetition': y_data})
-
-fig = px.scatter(df, x='Value of m', y='Steps to reach repetition',
-                title="Steps to reach 1 the first time in repetition")
-fig.show()
+    x_data = np.linspace(1, N, N, dtype=int)
+    y_data = np.asarray([steps_to_reach_repeating_optimized(i) for i in x_data])
+    df = pd.DataFrame({'Value of m': x_data, 'Steps to reach repetition': y_data})
+    
+    fig = px.scatter(df, x='Value of m', y='Steps to reach repetition',
+                    title="Steps to reach 1 the first time in repetition")
+    fig.show()
 ```
 
 ## Contributing
